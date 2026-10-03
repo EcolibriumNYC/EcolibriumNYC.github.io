@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 430" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Finite state machine for a button that toggles an LED</title>
+  <desc id="desc">Four states arranged in a loop. OFF (LED off) goes to ON_HELD (LED on) when the button is pressed. ON_HELD goes to ON (LED on) when the button is released. ON goes to OFF_HELD (LED off) when the button is pressed. OFF_HELD goes back to OFF when the button is released. In every state, if the input doesn't change, the machine stays where it is.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#3d434a"/>
+    </marker>
+  </defs>
+
+  <!-- Card background so the diagram reads in light and dark themes -->
+  <rect width="640" height="430" rx="16" fill="#ffffff"/>
+
+  <!-- Transitions -->
+  <line x1="232" y1="110" x2="404" y2="110" stroke="#3d434a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="320" y="96" font-size="14" fill="#3d434a" text-anchor="middle">button pressed</text>
+
+  <line x1="470" y1="172" x2="470" y2="224" stroke="#3d434a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="482" y="203" font-size="14" fill="#3d434a" text-anchor="start">released</text>
+
+  <line x1="408" y1="290" x2="236" y2="290" stroke="#3d434a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="320" y="318" font-size="14" fill="#3d434a" text-anchor="middle">button pressed</text>
+
+  <line x1="170" y1="228" x2="170" y2="176" stroke="#3d434a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="158" y="203" font-size="14" fill="#3d434a" text-anchor="end">released</text>
+
+  <!-- States: LED off = grey, LED on = yellow -->
+  <circle cx="170" cy="110" r="60" fill="#e4e7eb" stroke="#6b7480" stroke-width="2.5"/>
+  <text x="170" y="106" font-size="17" fill="#23272e" text-anchor="middle" font-weight="700">OFF</text>
+  <text x="170" y="128" font-size="13" fill="#23272e" text-anchor="middle">LED off</text>
+
+  <circle cx="470" cy="110" r="60" fill="#ffe08a" stroke="#b8860b" stroke-width="2.5"/>
+  <text x="470" y="106" font-size="17" fill="#23272e" text-anchor="middle" font-weight="700">ON_HELD</text>
+  <text x="470" y="128" font-size="13" fill="#23272e" text-anchor="middle">LED on</text>
+
+  <circle cx="470" cy="290" r="60" fill="#ffe08a" stroke="#b8860b" stroke-width="2.5"/>
+  <text x="470" y="286" font-size="17" fill="#23272e" text-anchor="middle" font-weight="700">ON</text>
+  <text x="470" y="308" font-size="13" fill="#23272e" text-anchor="middle">LED on</text>
+
+  <circle cx="170" cy="290" r="60" fill="#e4e7eb" stroke="#6b7480" stroke-width="2.5"/>
+  <text x="170" y="286" font-size="17" fill="#23272e" text-anchor="middle" font-weight="700">OFF_HELD</text>
+  <text x="170" y="308" font-size="13" fill="#23272e" text-anchor="middle">LED off</text>
+
+  <!-- Start marker -->
+  <line x1="60" y1="40" x2="122" y2="72" stroke="#3d434a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="40" y="34" font-size="13" fill="#3d434a">start</text>
+
+  <text x="320" y="392" font-size="14" fill="#5b5346" text-anchor="middle">If the button doesn't change, the machine stays in its current state.</text>
+  <text x="320" y="414" font-size="14" fill="#5b5346" text-anchor="middle">The _HELD states wait for a release, so holding the button toggles the LED only once.</text>
+</svg>
