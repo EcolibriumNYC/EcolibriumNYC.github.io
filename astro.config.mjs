@@ -8,6 +8,10 @@ export default defineConfig({
 	// Served from the EcolibriumNYC.github.io org Pages repo, so no `base` is needed
 	// and root-relative links in content keep working.
 	site: 'https://ecolibriumnyc.github.io',
+	// Old URLs of renamed sections, so shared links keep working.
+	redirects: {
+		'/software-applications/': '/computing-stack/',
+	},
 	integrations: [
 		starlight({
 			title: 'EcolibriumNYC Learning',
@@ -21,12 +25,10 @@ export default defineConfig({
 						'embedded-systems',
 						'programming-fundamentals',
 						'networking',
-						'software-applications',
+						'computing-stack',
 						'reverse-engineering',
 						'data-science',
-						'electrical-and-power',
 						'building-science-and-energy-systems',
-						'community-and-ethics',
 					],
 				},
 			],

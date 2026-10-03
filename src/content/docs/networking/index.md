@@ -1,5 +1,5 @@
 ---
-title: "Networking"
+title: "Networking and the Internet"
 description: "How computers pass messages, from across the internet to across the room, and why our projects keep as much as possible on the local network."
 ownership: frame-and-link
 projects: [vpp, solar-map, thermal-camera]

@@ -24,13 +24,11 @@ New here? Start with [Getting Started](/getting-started/).
 | [Linux and Your Computer](/linux-and-your-computer/) | Core | Core | Core |
 | [Embedded Systems](/embedded-systems/) | Core | — | Core |
 | [Programming Fundamentals](/programming-fundamentals/) | Core | Core | Core |
-| [Networking](/networking/) | Core | Helpful | Helpful |
-| [Software Applications](/software-applications/) | Core | Core | Helpful |
+| [Networking and the Internet](/networking/) | Core | Helpful | Helpful |
+| [The Computing Stack](/computing-stack/) | Core | Core | Helpful |
 | [Software Reverse Engineering](/reverse-engineering/) | Helpful | Helpful | Helpful |
 | [Data Science](/data-science/) | Helpful | Core | Helpful |
-| [Electrical & Power](/electrical-and-power/) | Core | Helpful | Helpful |
 | [Building Science & Energy Systems](/building-science-and-energy-systems/) | Core | Core | Core |
-| [Community & Ethics](/community-and-ethics/) | Core | Core | Core |
 
 ## Learn more
 

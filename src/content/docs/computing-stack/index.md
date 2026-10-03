@@ -1,5 +1,5 @@
 ---
-title: "Software Applications"
+title: "The Computing Stack"
 description: "How real applications are built from layers of other people's code: dependencies, abstractions, and the balance between trust and responsibility."
 ownership: frame-and-link
 projects: [vpp, solar-map, thermal-camera]

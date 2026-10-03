@@ -19,8 +19,6 @@ Taking things apart comes with responsibilities:
 - **Network captures can contain other people's private data.** Capture only on networks you control, and don't share capture files without checking what's in them.
 - **Some software licenses and laws restrict reverse engineering.** If you're not sure, ask before you start.
 
-See [Community & Ethics](/community-and-ethics/) for more on working responsibly.
-
 ## Running the toolchain backward
 
 In [Programming Fundamentals](/programming-fundamentals/), tools turned source code into machine code. Reverse engineering runs that chain the other way:
