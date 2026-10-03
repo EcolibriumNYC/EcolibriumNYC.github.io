@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Cloud-first compared with local-first networking</title>
+  <desc id="desc">Two panels. Left, cloud-first: a battery, a solar inverter, and a laptop in the same building all send their messages out through the router to a cloud service on the internet and back again. Right, local-first: the same devices talk to each other directly through the building's router, and the cloud is optional and drawn dashed.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#c0392b"/>
+    </marker>
+    <marker id="arrowg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1f7a4d"/>
+    </marker>
+  </defs>
+
+  <!-- Card background so the diagram reads in light and dark themes -->
+  <rect width="800" height="420" rx="16" fill="#ffffff"/>
+
+  <!-- ===== Left: cloud-first ===== -->
+  <text x="200" y="34" font-size="17" fill="#23272e" text-anchor="middle" font-weight="700">Cloud-first</text>
+
+  <!-- Cloud -->
+  <g fill="#dfe8f5" stroke="#6d89b3" stroke-width="2">
+    <ellipse cx="200" cy="82" rx="78" ry="28"/>
+  </g>
+  <text x="200" y="80" font-size="13" fill="#23272e" text-anchor="middle" font-weight="600">Cloud service</text>
+  <text x="200" y="96" font-size="11" fill="#3d434a" text-anchor="middle">on the internet</text>
+
+  <!-- Building -->
+  <rect x="30" y="170" width="340" height="190" rx="10" fill="#f5f0e6" stroke="#c9bfae" stroke-width="2"/>
+  <text x="44" y="352" font-size="12" fill="#5b5346">Building / local network</text>
+
+  <!-- Router -->
+  <rect x="160" y="190" width="80" height="34" rx="6" fill="#3b3f46"/>
+  <text x="200" y="212" font-size="13" fill="#ffffff" text-anchor="middle">Router</text>
+
+  <!-- Devices -->
+  <rect x="45" y="280" width="90" height="44" rx="6" fill="#b7e4a8" stroke="#4f8a3c"/>
+  <text x="90" y="307" font-size="13" fill="#23272e" text-anchor="middle">Battery</text>
+  <rect x="155" y="280" width="90" height="44" rx="6" fill="#ffe08a" stroke="#b8860b"/>
+  <text x="200" y="300" font-size="13" fill="#23272e" text-anchor="middle">Solar</text>
+  <text x="200" y="315" font-size="13" fill="#23272e" text-anchor="middle">inverter</text>
+  <rect x="265" y="280" width="90" height="44" rx="6" fill="#8fc1ff" stroke="#3b6fb3"/>
+  <text x="310" y="307" font-size="13" fill="#23272e" text-anchor="middle">Laptop</text>
+
+  <!-- Device-to-router links -->
+  <g stroke="#8a8f96" stroke-width="2">
+    <line x1="90" y1="280" x2="180" y2="224"/>
+    <line x1="200" y1="280" x2="200" y2="224"/>
+    <line x1="310" y1="280" x2="220" y2="224"/>
+  </g>
+
+  <!-- Up and back down to the cloud -->
+  <line x1="190" y1="190" x2="190" y2="114" stroke="#c0392b" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="210" y1="114" x2="210" y2="190" stroke="#c0392b" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="222" y="150" font-size="12" fill="#c0392b">out and back</text>
+
+  <text x="200" y="392" font-size="13" fill="#3d434a" text-anchor="middle">Even devices in the same room talk through the cloud.</text>
+  <text x="200" y="410" font-size="13" fill="#c0392b" text-anchor="middle">Internet down → devices can't coordinate.</text>
+
+  <!-- Divider -->
+  <line x1="400" y1="20" x2="400" y2="400" stroke="#e1dccf" stroke-width="2"/>
+
+  <!-- ===== Right: local-first ===== -->
+  <text x="600" y="34" font-size="17" fill="#23272e" text-anchor="middle" font-weight="700">Local-first</text>
+
+  <!-- Optional cloud (dashed) -->
+  <ellipse cx="600" cy="82" rx="78" ry="28" fill="#ffffff" stroke="#9aa1a9" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="600" y="80" font-size="13" fill="#6b7480" text-anchor="middle" font-weight="600">Cloud (optional)</text>
+  <text x="600" y="96" font-size="11" fill="#6b7480" text-anchor="middle">backups, remote view</text>
+  <line x1="600" y1="114" x2="600" y2="190" stroke="#9aa1a9" stroke-width="2" stroke-dasharray="6 5"/>
+
+  <!-- Building -->
+  <rect x="430" y="170" width="340" height="190" rx="10" fill="#f5f0e6" stroke="#c9bfae" stroke-width="2"/>
+  <text x="444" y="352" font-size="12" fill="#5b5346">Building / local network</text>
+
+  <!-- Router -->
+  <rect x="560" y="190" width="80" height="34" rx="6" fill="#3b3f46"/>
+  <text x="600" y="212" font-size="13" fill="#ffffff" text-anchor="middle">Router</text>
+
+  <!-- Devices -->
+  <rect x="445" y="280" width="90" height="44" rx="6" fill="#b7e4a8" stroke="#4f8a3c"/>
+  <text x="490" y="307" font-size="13" fill="#23272e" text-anchor="middle">Battery</text>
+  <rect x="555" y="280" width="90" height="44" rx="6" fill="#ffe08a" stroke="#b8860b"/>
+  <text x="600" y="300" font-size="13" fill="#23272e" text-anchor="middle">Solar</text>
+  <text x="600" y="315" font-size="13" fill="#23272e" text-anchor="middle">inverter</text>
+  <rect x="665" y="280" width="90" height="44" rx="6" fill="#8fc1ff" stroke="#3b6fb3"/>
+  <text x="710" y="307" font-size="13" fill="#23272e" text-anchor="middle">Laptop</text>
+
+  <!-- Local links (two-way) -->
+  <g stroke="#1f7a4d" stroke-width="3">
+    <line x1="497" y1="276" x2="575" y2="228" marker-start="url(#arrowg)" marker-end="url(#arrowg)"/>
+    <line x1="600" y1="276" x2="600" y2="228" marker-start="url(#arrowg)" marker-end="url(#arrowg)"/>
+    <line x1="703" y1="276" x2="625" y2="228" marker-start="url(#arrowg)" marker-end="url(#arrowg)"/>
+  </g>
+
+  <text x="600" y="392" font-size="13" fill="#3d434a" text-anchor="middle">Devices talk directly on the local network.</text>
+  <text x="600" y="410" font-size="13" fill="#1f7a4d" text-anchor="middle">Internet down → everything local keeps working.</text>
+</svg>
