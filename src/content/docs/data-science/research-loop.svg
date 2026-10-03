@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">The research loop</title>
+  <desc id="desc">Five steps in a row, joined by arrows: 1, hypothesis; 2, load data, often from an API; 3, clean and transform; 4, explore and visualize; 5, test: try to disprove the hypothesis and report statistical confidence. An arrow loops from step 5 back to step 1, labeled: revise the hypothesis, or chase a sub-hypothesis you noticed along the way. All five steps sit inside a notebook.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#3d434a"/>
+    </marker>
+  </defs>
+
+  <!-- Card background so the diagram reads in light and dark themes -->
+  <rect width="800" height="300" rx="16" fill="#ffffff"/>
+
+  <!-- Notebook frame -->
+  <rect x="20" y="40" width="760" height="170" rx="12" fill="#f5f0e6" stroke="#c9bfae" stroke-width="2"/>
+  <text x="34" y="30" font-size="14" fill="#5b5346">All in one notebook: code, results, charts, and notes</text>
+
+  <!-- Steps -->
+  <rect x="36" y="70" width="128" height="110" rx="10" fill="#f4a3b4" stroke="#b5566b" stroke-width="2"/>
+  <text x="100" y="100" font-size="22" fill="#23272e" text-anchor="middle" font-weight="700">1</text>
+  <text x="100" y="128" font-size="15" fill="#23272e" text-anchor="middle" font-weight="700">Hypothesis</text>
+  <text x="100" y="148" font-size="12" fill="#23272e" text-anchor="middle">a claim you</text>
+  <text x="100" y="163" font-size="12" fill="#23272e" text-anchor="middle">could prove wrong</text>
+
+  <rect x="186" y="70" width="128" height="110" rx="10" fill="#8fc1ff" stroke="#3b6fb3" stroke-width="2"/>
+  <text x="250" y="100" font-size="22" fill="#23272e" text-anchor="middle" font-weight="700">2</text>
+  <text x="250" y="128" font-size="15" fill="#23272e" text-anchor="middle" font-weight="700">Load data</text>
+  <text x="250" y="148" font-size="12" fill="#23272e" text-anchor="middle">often from</text>
+  <text x="250" y="163" font-size="12" fill="#23272e" text-anchor="middle">an API</text>
+
+  <rect x="336" y="70" width="128" height="110" rx="10" fill="#8fc1ff" stroke="#3b6fb3" stroke-width="2"/>
+  <text x="400" y="100" font-size="22" fill="#23272e" text-anchor="middle" font-weight="700">3</text>
+  <text x="400" y="128" font-size="15" fill="#23272e" text-anchor="middle" font-weight="700">Clean and</text>
+  <text x="400" y="146" font-size="15" fill="#23272e" text-anchor="middle" font-weight="700">transform</text>
+  <text x="400" y="165" font-size="12" fill="#23272e" text-anchor="middle">fix, reshape</text>
+
+  <rect x="486" y="70" width="128" height="110" rx="10" fill="#b7e4a8" stroke="#4f8a3c" stroke-width="2"/>
+  <text x="550" y="100" font-size="22" fill="#23272e" text-anchor="middle" font-weight="700">4</text>
+  <text x="550" y="128" font-size="15" fill="#23272e" text-anchor="middle" font-weight="700">Explore and</text>
+  <text x="550" y="146" font-size="15" fill="#23272e" text-anchor="middle" font-weight="700">visualize</text>
+  <text x="550" y="165" font-size="12" fill="#23272e" text-anchor="middle">look for patterns</text>
+
+  <rect x="636" y="70" width="128" height="110" rx="10" fill="#ffe08a" stroke="#b8860b" stroke-width="2"/>
+  <text x="700" y="100" font-size="22" fill="#23272e" text-anchor="middle" font-weight="700">5</text>
+  <text x="700" y="128" font-size="15" fill="#23272e" text-anchor="middle" font-weight="700">Test</text>
+  <text x="700" y="148" font-size="12" fill="#23272e" text-anchor="middle">try to disprove it,</text>
+  <text x="700" y="163" font-size="12" fill="#23272e" text-anchor="middle">report confidence</text>
+
+  <!-- Forward arrows -->
+  <g stroke="#3d434a" stroke-width="2.5" marker-end="url(#arrow)">
+    <line x1="166" y1="125" x2="184" y2="125"/>
+    <line x1="316" y1="125" x2="334" y2="125"/>
+    <line x1="466" y1="125" x2="484" y2="125"/>
+    <line x1="616" y1="125" x2="634" y2="125"/>
+  </g>
+
+  <!-- Loop back -->
+  <path d="M700 182 V250 H100 V184" fill="none" stroke="#b5566b" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="400" y="272" font-size="13" fill="#b5566b" text-anchor="middle">Revise the hypothesis, or chase a sub-hypothesis you noticed along the way</text>
+</svg>
