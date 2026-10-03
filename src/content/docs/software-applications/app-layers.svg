@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 430" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">The layers of a software application</title>
+  <desc id="desc">Six stacked layers, top to bottom: your code; a framework such as Astro or Flask; libraries installed by a package manager such as npm or pip; a runtime such as Node or Python, pinned by mise; the operating system; and the hardware with its CPU, storage, memory, and network/IO. A bracket marks the framework, libraries, and runtime as dependencies. A second bracket marks the operating system and hardware as the platform.</desc>
+
+  <!-- Card background so the diagram reads in light and dark themes -->
+  <rect width="680" height="430" rx="16" fill="#ffffff"/>
+
+  <!-- Layers -->
+  <rect x="40" y="30" width="420" height="52" rx="8" fill="#f4a3b4" stroke="#b5566b" stroke-width="2"/>
+  <text x="60" y="54" font-size="16" fill="#23272e" font-weight="700">Your code</text>
+  <text x="60" y="72" font-size="12" fill="#23272e">the part specific to your project</text>
+
+  <rect x="40" y="92" width="420" height="52" rx="8" fill="#ffe08a" stroke="#b8860b" stroke-width="2"/>
+  <text x="60" y="116" font-size="16" fill="#23272e" font-weight="700">Framework</text>
+  <text x="60" y="134" font-size="12" fill="#23272e">structure your code plugs into (Astro, Flask)</text>
+
+  <rect x="40" y="154" width="420" height="52" rx="8" fill="#ffe08a" stroke="#b8860b" stroke-width="2"/>
+  <text x="60" y="178" font-size="16" fill="#23272e" font-weight="700">Libraries</text>
+  <text x="60" y="196" font-size="12" fill="#23272e">installed by a package manager (npm, pip)</text>
+
+  <rect x="40" y="216" width="420" height="52" rx="8" fill="#ffe08a" stroke="#b8860b" stroke-width="2"/>
+  <text x="60" y="240" font-size="16" fill="#23272e" font-weight="700">Runtime</text>
+  <text x="60" y="258" font-size="12" fill="#23272e">runs the code (Node, Python), version pinned by mise</text>
+
+  <rect x="40" y="278" width="420" height="52" rx="8" fill="#8fc1ff" stroke="#3b6fb3" stroke-width="2"/>
+  <text x="60" y="302" font-size="16" fill="#23272e" font-weight="700">Operating system</text>
+  <text x="60" y="320" font-size="12" fill="#23272e">Linux, macOS, Windows</text>
+
+  <rect x="40" y="340" width="420" height="52" rx="8" fill="#8fc1ff" stroke="#3b6fb3" stroke-width="2"/>
+  <text x="60" y="364" font-size="16" fill="#23272e" font-weight="700">Hardware</text>
+  <text x="60" y="382" font-size="12" fill="#23272e">CPU, storage, memory, network / IO</text>
+
+  <!-- Brackets -->
+  <path d="M478 96 h12 v168 h-12" fill="none" stroke="#8a6d10" stroke-width="2.5"/>
+  <text x="500" y="174" font-size="15" fill="#23272e" font-weight="700">Dependencies</text>
+  <text x="500" y="193" font-size="12" fill="#3d434a">someone else's code</text>
+  <text x="500" y="209" font-size="12" fill="#3d434a">that you build on</text>
+
+  <path d="M478 282 h12 v106 h-12" fill="none" stroke="#2d5c99" stroke-width="2.5"/>
+  <text x="500" y="330" font-size="15" fill="#23272e" font-weight="700">Platform</text>
+  <text x="500" y="349" font-size="12" fill="#3d434a">what everything</text>
+  <text x="500" y="365" font-size="12" fill="#3d434a">runs on</text>
+
+  <text x="250" y="418" font-size="13" fill="#5b5346" text-anchor="middle">Each layer relies on the one below it.</text>
+</svg>

@@ -22,6 +22,7 @@ export default defineConfig({
 						'programming-fundamentals',
 						'networking',
 						'software-applications',
+						'reverse-engineering',
 						'data-science',
 						'electrical-and-power',
 						'building-science-and-energy-systems',

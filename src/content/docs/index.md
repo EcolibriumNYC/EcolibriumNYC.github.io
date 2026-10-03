@@ -26,6 +26,7 @@ New here? Start with [Getting Started](/getting-started/).
 | [Programming Fundamentals](/programming-fundamentals/) | Core | Core | Core |
 | [Networking](/networking/) | Core | Helpful | Helpful |
 | [Software Applications](/software-applications/) | Core | Core | Helpful |
+| [Software Reverse Engineering](/reverse-engineering/) | Helpful | Helpful | Helpful |
 | [Data Science](/data-science/) | Helpful | Core | Helpful |
 | [Electrical & Power](/electrical-and-power/) | Core | Helpful | Helpful |
 | [Building Science & Energy Systems](/building-science-and-energy-systems/) | Core | Core | Core |

@@ -86,12 +86,8 @@ _None yet._
 
 - [UTexas: Chapter 1, Introduction to Embedded Systems](https://users.ece.utexas.edu/~valvano/Volume1/IntroToEmbSys/Ch1_Introduction.html): the source for this page's outline, with videos, interactive number-conversion tools, and checkpoint questions.
 - [Instructables: Soldering Guide](https://www.instructables.com/How-to-solder/)
-- [Ghidra Beginner Guide](https://ghidra-sre.org/)
+- [Software Reverse Engineering](/reverse-engineering/): take firmware apart with Ghidra to see how it works.
 
 :::note
 The UT Austin material is licensed [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/), which doesn't allow adaptations. This page organizes the topics around our own four-resource framing, in our own words, and links to the original.
-:::
-
-:::caution[Link check]
-The "Ghidra Beginner Guide" link redirects to the Ghidra source repository on GitHub (`github.com/NationalSecurityAgency/ghidra`), not a beginner guide (checked 2026-10-03). Either relabel it as the official project and move it to Primary sources, or replace it with an actual beginner guide.
 :::
