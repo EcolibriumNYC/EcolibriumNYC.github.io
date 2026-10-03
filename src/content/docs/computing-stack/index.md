@@ -85,7 +85,7 @@ So we're always balancing two things: trusting other people's work, and being re
 - **What does it bring with it?** Its own dependencies, its size, its license.
 - **What happens if it breaks or disappears?** Could we patch it, vendor it, or replace it?
 
-When an abstraction does break, sometimes the only way forward is to look underneath it. That's what [Software Reverse Engineering](/reverse-engineering/) practices.
+When an abstraction does break, sometimes the only way forward is to look underneath it. That's what [Reverse Engineering](/reverse-engineering/) practices.
 
 ## Primary sources
 

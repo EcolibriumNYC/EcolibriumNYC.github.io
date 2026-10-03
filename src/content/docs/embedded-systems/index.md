@@ -86,7 +86,7 @@ _None yet._
 
 - [UTexas: Chapter 1, Introduction to Embedded Systems](https://users.ece.utexas.edu/~valvano/Volume1/IntroToEmbSys/Ch1_Introduction.html): the source for this page's outline, with videos, interactive number-conversion tools, and checkpoint questions.
 - [Instructables: Soldering Guide](https://www.instructables.com/How-to-solder/)
-- [Software Reverse Engineering](/reverse-engineering/): take firmware apart with Ghidra to see how it works.
+- [Reverse Engineering](/reverse-engineering/): trace circuits with a multimeter and take firmware apart with Ghidra.
 
 :::note
 The UT Austin material is licensed [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/), which doesn't allow adaptations. This page organizes the topics around our own four-resource framing, in our own words, and links to the original.

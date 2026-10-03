@@ -1,5 +1,5 @@
 ---
-title: "Software Reverse Engineering"
+title: "Reverse Engineering"
 description: "Learning how devices and software work by taking them apart: tracing circuits with a multimeter, reading compiled programs with Ghidra, and watching network traffic with Wireshark."
 ownership: frame-and-link
 projects: [vpp, solar-map, thermal-camera]

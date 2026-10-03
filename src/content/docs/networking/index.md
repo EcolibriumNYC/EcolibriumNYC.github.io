@@ -35,7 +35,7 @@ Most of that uses **TCP**, which checks that every packet arrives, in order. Som
 
 ## Encryption
 
-Packets pass through many routers on the way, and any of them could read a plain message. **Encryption** scrambles the contents so only the two ends can read them. Secure web pages use **TLS**, which is the "S" in HTTPS and the reason for port 443. Routers can still see *where* an encrypted packet is going, just not what's inside. Plain DNS lookups are usually not encrypted, which you'll see for yourself in [Software Reverse Engineering](/reverse-engineering/).
+Packets pass through many routers on the way, and any of them could read a plain message. **Encryption** scrambles the contents so only the two ends can read them. Secure web pages use **TLS**, which is the "S" in HTTPS and the reason for port 443. Routers can still see *where* an encrypted packet is going, just not what's inside. Plain DNS lookups are usually not encrypted, which you'll see for yourself in [Reverse Engineering](/reverse-engineering/).
 
 ## Try it
 
@@ -58,7 +58,7 @@ nslookup google.com 8.8.8.8   # ask Google's DNS server (8.8.8.8) for google.com
 ping -c 4 8.8.8.8             # send 4 packets to that server and time the replies
 ```
 
-On Windows, use `ping 8.8.8.8` (it sends 4 by default). If Linux says `nslookup: command not found`, install your distribution's `dnsutils` or `bind` package. The [Software Reverse Engineering](/reverse-engineering/) section uses `nslookup` again to watch these exact packets fly by.
+On Windows, use `ping 8.8.8.8` (it sends 4 by default). If Linux says `nslookup: command not found`, install your distribution's `dnsutils` or `bind` package. The [Reverse Engineering](/reverse-engineering/) section uses `nslookup` again to watch these exact packets fly by.
 
 ## Local-first networking
 
@@ -84,4 +84,4 @@ _None yet._
 ## Learn more
 
 - [How the Internet Works](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work) · [How the Web Works](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works)
-- [Software Reverse Engineering](/reverse-engineering/): watch real network traffic with Wireshark.
+- [Reverse Engineering](/reverse-engineering/): watch real network traffic with Wireshark.
