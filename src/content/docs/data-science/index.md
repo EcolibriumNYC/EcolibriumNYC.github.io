@@ -61,10 +61,10 @@ Then revisit. Exploring often turns up something unexpected, and that becomes a 
 Let's test the hypothesis from step 1 with a year of solar data for the Lower East Side. Install pixi by following its [installation guide](https://pixi.prefix.dev/latest/installation/), then:
 
 ```sh
-pixi init solar-research                          # create a new project folder with a pixi.toml
+pixi init solar-research          # new project folder with a pixi.toml
 cd solar-research
-pixi add python numpy pandas matplotlib marimo    # install Python and the libraries, and record them
-pixi run marimo edit solar.py                     # create the notebook and open it in your browser
+pixi add python numpy pandas matplotlib marimo   # install, and record
+pixi run marimo edit solar.py     # create the notebook and open it
 ```
 
 Type each block below into its own cell, and run it with the ▶ button or `Shift+Enter`. marimo shows the last line of each cell as its output. Each variable name can be defined in only one cell, because that's how marimo tracks which cells depend on which.
@@ -87,14 +87,17 @@ url = (
     "&daily=shortwave_radiation_sum"  # solar energy per day
     "&timezone=America/New_York&format=csv"
 )
-raw = pd.read_csv(url, skiprows=3)  # skip 3 lines describing the location
+raw = pd.read_csv(url, skiprows=3)  # skip 3 lines about the location
 raw
 ```
 
 **Clean and transform** it into the shape we need:
 
 ```python
-df = raw.rename(columns={"time": "date", "shortwave_radiation_sum (MJ/m²)": "solar"})
+df = raw.rename(columns={
+    "time": "date",
+    "shortwave_radiation_sum (MJ/m²)": "solar",
+})
 df["date"] = pd.to_datetime(df["date"])  # text → real dates
 df = df.dropna()  # drop days with missing readings
 df["month"] = df["date"].dt.month  # 1 = January ... 12 = December
@@ -104,8 +107,9 @@ df
 **Explore** with a chart of the average day in each month:
 
 ```python
-monthly = df.groupby("month")["solar"].mean()  # average day in each month
-monthly.plot(kind="bar", xlabel="Month", ylabel="Solar energy per day (MJ/m²)")
+monthly = df.groupby("month")["solar"].mean()  # average day per month
+monthly.plot(kind="bar", xlabel="Month",
+             ylabel="Solar energy per day (MJ/m²)")
 plt.gca()
 ```
 
@@ -115,11 +119,15 @@ plt.gca()
 jan = df[df["month"] == 1]["solar"].to_numpy()
 jul = df[df["month"] == 7]["solar"].to_numpy()
 
-# Resample the days 10,000 times to see how much the ratio varies by chance
+# Resample 10,000 times to see how much the ratio varies by chance
 rng = np.random.default_rng(0)
-ratios = [rng.choice(jul, len(jul)).mean() / rng.choice(jan, len(jan)).mean() for _ in range(10_000)]
+ratios = [
+    rng.choice(jul, len(jul)).mean() / rng.choice(jan, len(jan)).mean()
+    for _ in range(10_000)
+]
 low, high = np.percentile(ratios, [2.5, 97.5])
-f"July ÷ January = {jul.mean() / jan.mean():.2f}, 95% confidence interval {low:.2f} to {high:.2f}"
+ratio = jul.mean() / jan.mean()
+f"July ÷ January = {ratio:.2f}, 95% confidence {low:.2f} to {high:.2f}"
 ```
 
 When we ran it, July got about 2.6 times January's solar energy, with a 95% confidence interval of about 2.3 to 3.1. The whole interval is above 2, so our attempt to disprove the hypothesis failed, and it survives.

@@ -90,7 +90,7 @@ int main(int argc, char *argv[]) {
 Compile and run it:
 
 ```sh
-gcc -O0 -o secret secret.c    # compile with no optimizations, so it's easier to read
+gcc -O0 -o secret secret.c    # compile unoptimized, easier to read
 ./secret hello                # prints: Wrong password
 ./secret ecolibrium           # prints: Access granted
 ```
@@ -100,7 +100,7 @@ On macOS, run `xcode-select --install` first to get a compiler. On Windows, the 
 Before opening Ghidra, try the simplest reverse engineering tool there is:
 
 ```sh
-strings secret                # print every piece of readable text in the file
+strings secret                # print all the readable text in the file
 ```
 
 The password is right there in the list. Anything written into a program as plain text ends up stored in the machine code.
@@ -117,7 +117,7 @@ Now open it in Ghidra:
 For a real challenge, remove the function names and try again:
 
 ```sh
-strip secret                  # delete the names (symbols) from the program
+strip secret                  # delete the names (symbols) from it
 ```
 
 Import the stripped `secret` into Ghidra. `main` no longer has its name, so you have to find it some other way. Hint: search for the `"Wrong password"` text with **Search → For Strings**, then follow where it's used. Real firmware usually arrives like this, with no names at all.
@@ -132,7 +132,7 @@ Wireshark captures every packet passing through your computer's network connecti
 4. In a terminal, run:
 
    ```sh
-   nslookup google.com 8.8.8.8   # the same lookup from the Networking section
+   nslookup google.com 8.8.8.8   # the same lookup as in Networking
    ```
 
 5. Back in Wireshark, find the new packets: a **query** to `8.8.8.8` asking for `google.com`, and a **response**. Click the response, then expand **Domain Name System** in the middle pane. The address in the answer is the same one `nslookup` printed.

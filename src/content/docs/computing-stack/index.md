@@ -66,6 +66,8 @@ An **abstraction** puts some complexity behind an interface. You use the interfa
 - An **HTTP request** hides routing: you ask for a page, and you never think about the routers in between.
 - `git push` hides how files get packed up and copied to another machine.
 
+When the interface is one that code uses, like a library's functions or a server that answers requests over the network, it's called an **API** (application programming interface). A good API stays the same even when what's behind it changes, so each side can change on the inside without breaking the other.
+
 Abstractions are how we build complicated software. Each layer in the diagram above is an abstraction over the one below it, so you can write a website without thinking about transistors. A **framework** is a big abstraction: it hides most of the structure of an application, so you only write the parts specific to your project.
 
 ## Trust

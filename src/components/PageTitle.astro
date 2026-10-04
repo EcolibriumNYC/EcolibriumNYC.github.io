@@ -1,0 +1,91 @@
+---
+// Replaces Starlight's page title.
+// - Home page: a hero plus the learning path, built from the sidebar order and
+//   each page's frontmatter, so it never needs updating by hand.
+// - Every other page: the title plus a strip of facts from the frontmatter
+//   (draft status, when it was last reviewed, who maintains it).
+import { getCollection } from 'astro:content';
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+
+const route = Astro.locals.starlightRoute;
+const { entry } = route;
+const data = entry.data;
+const isHome = route.id === '';
+
+// Flatten the sidebar into its links, in order.
+type SidebarEntry = (typeof route.sidebar)[number];
+const flatten = (entries: SidebarEntry[]): Extract<SidebarEntry, { type: 'link' }>[] =>
+	entries.flatMap((e) => (e.type === 'link' ? [e] : flatten(e.entries)));
+const links = flatten(route.sidebar);
+
+const isDraft = (badge: unknown) =>
+	typeof badge === 'object' && badge !== null && 'text' in badge && badge.text === 'Draft';
+
+const formatDate = (date: Date) =>
+	date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+
+const currentLink = links.find((l) => l.isCurrent);
+const hasOwner = data.owner && data.owner !== '@TBD';
+
+// Home page: one card per sidebar link, with its description from frontmatter.
+let path: { href: string; title: string; description?: string; draft: boolean }[] = [];
+if (isHome) {
+	const docs = await getCollection('docs');
+	const byHref = new Map(docs.map((d) => [`/${d.id}/`, d]));
+	path = links.map((l) => {
+		const doc = byHref.get(l.href);
+		return {
+			href: l.href,
+			title: l.label,
+			description: doc?.data.description,
+			draft: isDraft(l.badge),
+		};
+	});
+}
+---
+
+{
+	isHome ? (
+		<>
+			<header class="lab-hero">
+				<h1 id="_top">{data.title}</h1>
+				{data.description && <p>{data.description}</p>}
+				<div class="lab-hero-actions">
+					{path[0] && (
+						<a class="lab-button lab-button--primary" href={path[0].href}>
+							Start with {path[0].title}
+						</a>
+					)}
+					<a class="lab-button" href="https://github.com/EcolibriumNYC">
+						EcolibriumNYC on GitHub
+					</a>
+				</div>
+			</header>
+			<p class="lab-path-heading">The learning path</p>
+			<ol class="lab-path">
+				{path.map((p) => (
+					<li>
+						<a href={p.href}>
+							<span class="lab-path-title">{p.title}</span>
+							{p.description && <span class="lab-path-desc">{p.description}</span>}
+							{p.draft && (
+								<span class="lab-meta">
+									<span class="lab-chip lab-chip--draft">Draft</span>
+								</span>
+							)}
+						</a>
+					</li>
+				))}
+			</ol>
+		</>
+	) : (
+		<>
+			<Default />
+			<div class="lab-meta">
+				{currentLink && isDraft(currentLink.badge) && <span class="lab-chip lab-chip--draft">Draft</span>}
+				<span class="lab-chip">Reviewed {formatDate(data.lastReviewed)}</span>
+				{hasOwner && <span class="lab-chip">Maintained by {data.owner}</span>}
+			</div>
+		</>
+	)
+}

@@ -103,7 +103,7 @@ A remote can also be a folder on your own computer, which makes it easy to pract
 git init --bare ../git_test_remote.git; # an empty repository to push to
 git remote add origin ../git_test_remote.git; # name it "origin"
 git branch -M main; # name your branch "main"
-git push -u origin main; # upload, and make origin the default for future pushes
+git push -u origin main; # upload, and make origin the default
 git remote -v
 ```
 

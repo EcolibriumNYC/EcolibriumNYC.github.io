@@ -1,5 +1,5 @@
 ---
-title: "Building Science & Energy Systems (DRAFT)"
+title: "Building Science & Energy Systems"
 description: "How buildings, climate, occupants, and energy systems interact, and the tradeoffs our smart home and VPP system are designed around."
 ownership: frame-and-link
 projects: [vpp, solar-map, thermal-camera]

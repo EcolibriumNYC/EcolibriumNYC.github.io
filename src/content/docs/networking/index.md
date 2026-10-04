@@ -54,8 +54,8 @@ Look for an address starting with `192.168.` or `10.`. That's your private addre
 Look up a name, and send a few test packets:
 
 ```sh
-nslookup google.com 8.8.8.8   # ask Google's DNS server (8.8.8.8) for google.com's address
-ping -c 4 8.8.8.8             # send 4 packets to that server and time the replies
+nslookup google.com 8.8.8.8   # ask Google's DNS server for google.com
+ping -c 4 8.8.8.8             # send 4 packets and time the replies
 ```
 
 On Windows, use `ping 8.8.8.8` (it sends 4 by default). If Linux says `nslookup: command not found`, install your distribution's `dnsutils` or `bind` package. The [Reverse Engineering](/reverse-engineering/) section uses `nslookup` again to watch these exact packets fly by.
