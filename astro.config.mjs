@@ -41,7 +41,10 @@ export default defineConfig({
 				{
 					label: 'Sections',
 					items: [
-						'linux-and-your-computer',
+						{
+							slug: 'linux-and-your-computer',
+							badge: { text: 'Draft', variant: 'caution' },
+						},
 						'embedded-systems',
 						'programming-fundamentals',
 						'networking',

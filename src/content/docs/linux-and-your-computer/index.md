@@ -10,6 +10,10 @@ lastReviewed: 2026-10-03
 
 This section goes beyond [Getting Started](/getting-started/) to explain the computer you're working on and the everyday tools you'll use on every project.
 
+:::note[Draft]
+This page is an early outline. It will be expanded to match the other sections.
+:::
+
 ## Platform and architecture
 
 Software is built for a particular **platform**: an operating system (Linux, macOS, Windows) running on a particular processor **architecture**. Most laptops use `x86_64`, while Apple Silicon Macs and Raspberry Pis use ARM (`arm64`/`aarch64`). A program compiled for one combination usually won't run on another. That's why install pages ask you to pick your OS and chip, and why tools like mise download a different file depending on your machine.
