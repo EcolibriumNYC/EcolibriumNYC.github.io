@@ -134,7 +134,10 @@ Import the stripped `secret` into Ghidra. `main` no longer has its name, so you 
 
 Wireshark captures every packet passing through your computer's network connection and decodes it, layer by layer. Let's watch the DNS lookup from [Networking and the Internet](/networking/) happen.
 
-1. Install Wireshark from [wireshark.org](https://www.wireshark.org/download.html). On Linux, install it from your distribution's package manager, and allow non-root users to capture if it asks.
+1. Install Wireshark from [wireshark.org](https://www.wireshark.org/download.html). On Linux, install it from your distribution's package manager instead. Capturing packets needs your operating system's permission, so also:
+   - **Linux:** allow non-root users to capture if it asks, then run `sudo usermod -aG wireshark $USER` and log out and back in.
+   - **macOS:** install ChmodBPF when the installer offers it.
+   - **Windows:** keep Npcap selected in the installer.
 2. Open Wireshark. Double-click the connection you're using (Wi-Fi or Ethernet). It's the one with a moving activity line next to it.
 3. Type `dns` in the filter bar at the top and press Enter. This hides everything except DNS packets.
 4. In a terminal, run:
