@@ -22,6 +22,7 @@ Node is pinned in `.mise.toml`. Run `mise install` first.
 - `astro.config.mjs`: site config, sidebar order, draft badges, redirects, fonts, code-block theme, and plugins. Add new sections to the sidebar here.
 - `src/styles/theme.css`: the lab-notebook theme (colors, fonts, graph-paper background, diagrams, tables, "Try it" cards).
 - `src/components/PageTitle.astro`: replaces Starlight's page title. On the home page it renders the hero and the learning path (built from the sidebar order and each page's `description`); on other pages it adds a strip of chips from the frontmatter.
+- `labs/<section>/`: files for a page's hands-on steps. Tools only that page needs go in a `mise.toml` in its folder, not the root `.mise.toml`, so `mise install` at the root stays small. Pin downloads that aren't in a registry with mise's `http:` backend and the publisher's checksum (see `labs/reverse-engineering/mise.toml`).
 - `.github/workflows/deploy.yml`: builds with the mise-pinned Node and deploys to GitHub Pages on every push to `main`.
 
 Sections are ordered so each builds on the last: Linux and Your Computer → Embedded Systems → Programming Fundamentals → Networking and the Internet → The Computing Stack → Reverse Engineering. Data Science and Building Science & Energy Systems are more standalone.

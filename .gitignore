@@ -3,3 +3,6 @@ dist/
 node_modules/
 .env
 .DS_Store
+
+# Programs compiled in the Reverse Engineering lab
+labs/reverse-engineering/secret

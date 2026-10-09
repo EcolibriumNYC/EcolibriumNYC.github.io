@@ -70,7 +70,7 @@ A multimeter shows one slow-changing number, but digital signals switch thousand
 
 Ghidra is a free, open-source reverse engineering tool from the NSA. It takes machine code and shows it as assembly (disassembly) and as approximate C (decompilation).
 
-It's easiest to start with a program you wrote yourself, so you can compare Ghidra's version with the original. Save this as `secret.c`:
+It's easiest to start with a program you wrote yourself, so you can compare Ghidra's version with the original. It's already in the site's repository, in `labs/reverse-engineering/` (clone it as in the [Computing Stack](/computing-stack/) Try it), or save this as `secret.c`:
 
 ```c
 // secret.c: a tiny password checker to take apart
@@ -107,8 +107,16 @@ The password is right there in the list. Anything written into a program as plai
 
 Now open it in Ghidra:
 
-1. Install Ghidra by following its official [Getting Started guide](https://github.com/NationalSecurityAgency/ghidra/blob/master/GhidraDocs/GettingStarted.md). It needs a Java JDK, and the guide lists the current version.
-2. Start Ghidra. Choose **File → New Project**, pick **Non-Shared Project**, and give it a folder and a name.
+1. Install and start Ghidra. In the site's repository, run:
+
+   ```sh
+   cd labs/reverse-engineering
+   mise install                  # Ghidra and its Java, about 1.2 GB
+   mise run ghidra               # start Ghidra
+   ```
+
+   To install it without mise, follow Ghidra's official [Getting Started guide](https://github.com/NationalSecurityAgency/ghidra/blob/master/GhidraDocs/GettingStarted.md). It needs a Java JDK, and the guide lists the current version.
+2. Choose **File → New Project**, pick **Non-Shared Project**, and give it a folder and a name.
 3. Choose **File → Import File** and select `secret`. Accept the defaults.
 4. Double-click `secret` to open it. When Ghidra asks to analyze it, click **Yes** and accept the defaults.
 5. In the **Symbol Tree** panel, open **Functions** and click `main` (on macOS it's called `_main`).
